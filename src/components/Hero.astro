@@ -47,7 +47,7 @@ const {} = Astro.props;
             <div class="mt-20 px-1 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen relative">
                 <img id="image"
                      class="rounded-xl top-0 left-0 w-full h-auto"
-                     src="https://i.ibb.co/RkY8BTff/friends-sharing-ideas.jpg" alt="friends-sharing-ideas"/>
+                     src="./friends-sharing-ideas.jpg" alt="friends-sharing-ideas"/>
                 <div class="absolute top-0 right-0 rounded-bl-xl p-6 bg-gray-50">
                     <svg class="h-2 w-2 inline fill-black mr-2" viewBox="0 0 6 6" aria-hidden="true">
                         <circle cx="3" cy="3" r="3"/>
@@ -68,7 +68,7 @@ const {} = Astro.props;
 
 <script type="module" client:load>
     const images = [
-        "https://i.ibb.co/RkY8BTff/friends-sharing-ideas.jpg",
+        "./friends-sharing-ideas.jpg",
     ];
     let currentIndex = 0;
     const imageElement = document.getElementById('image');
