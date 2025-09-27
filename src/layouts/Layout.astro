@@ -14,7 +14,7 @@ const {title} = Astro.props;
   <meta charset="UTF-8"/>
   <meta name="description" content="Dashboard template">
   <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="./logo.png"/>
+  <link rel="icon" type="image/svg+xml" href="./favicon.png"/>
   <meta name="generator" content=""/>
   <title>{title}</title>
 
@@ -45,8 +45,10 @@ const {title} = Astro.props;
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Policies</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Report</a>
+        <a href="/" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+        <a href="/features" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+        <a href="/legal" class="text-sm font-semibold leading-6 text-gray-900">Legal</a>
+        <a href="/about" class="text-sm font-semibold leading-6 text-gray-900">About</a>
         <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900">Contact</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -74,18 +76,20 @@ const {title} = Astro.props;
         </div>
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a href="/products"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Products</a>
+            <div class="space-y-2 py-6"> 
+                <a href="/"
+                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
               <a href="/features"
                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-              <a href="/company"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-              <a href="/contact"
+              <a href="/legal"
+                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Legal</a>
+              <a href="/about"
+                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+                 <a href="/contact"
                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
             </div>
             <div class="py-6">
-              <a href="/login"
+              <a href="https://app.bloccfeed.space/login.php"
                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                 Log in
               </a>

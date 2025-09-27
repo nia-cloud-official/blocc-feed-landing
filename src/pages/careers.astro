@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import careers from '../data/careers.json';
+---
+
+<Layout title="Careers — BlocFeed">
+
+  <!-- Hero Section -->
+  <section class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/40 to-white">
+    <br><br><br>
+    <div class="mx-auto max-w-7xl px-6 pt-24 pb-16 sm:pb-24 lg:px-8 lg:pt-32 text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        Careers at BlocFeed
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+        Join us in building the world’s first platform where ideas turn into opportunities. We’re looking for passionate, creative, and driven people to help shape the future of innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 text-center">Open Opportunities</h2>
+    <p class="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
+      Explore our current openings below. If you don’t see a role that fits, check back soon — we’re always growing.
+    </p>
+
+    {careers.length === 0 ? (
+      <div class="mt-12 text-center text-gray-600 text-lg">
+        🚫 No job openings at the moment. Please check back later!
+      </div>
+    ) : (
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {careers.map((job) => (
+          <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold text-gray-900">{job.title}</h3>
+            <p class="mt-2 text-sm text-gray-600">{job.description}</p>
+            <div class="mt-4 space-y-1 text-sm text-gray-700">
+              <p><span class="font-semibold">📍 Location:</span> {job.location}</p>
+              <p><span class="font-semibold">💰 Pay:</span> {job.pay}</p>
+            </div>
+            <div class="mt-6">
+              <a href={job.applyLink} target="_blank" rel="noopener noreferrer"
+                 class="inline-block rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white border border-black shadow-sm hover:bg-white hover:text-black">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <!-- Culture Section -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-5xl px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Life at BlocFeed</h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+        We’re a remote‑friendly, globally distributed team that values creativity, collaboration, and growth. At BlocFeed, you’ll work on meaningful projects, learn from diverse colleagues, and help shape the future of innovation.
+      </p>
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="p-6 rounded-lg bg-white shadow-md">
+          <div class="text-3xl">🌍</div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900">Global Team</h3>
+          <p class="mt-2 text-gray-600">Work with talented people from around the world, across time zones and cultures.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-white shadow-md">
+          <div class="text-3xl">📚</div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900">Continuous Learning</h3>
+          <p class="mt-2 text-gray-600">We invest in your growth with learning stipends, mentorship, and opportunities to expand your skills.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-white shadow-md">
+          <div class="text-3xl">⚖️</div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900">Work-Life Balance</h3>
+          <p class="mt-2 text-gray-600">Flexible schedules and remote options help you thrive both personally and professionally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="relative bg-gradient-to-r from-[#ff80b5]/10 to-[#9089fc]/10 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Ready to join us?
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        If you’re passionate about ideas, collaboration, and innovation, we’d love to hear from you. Apply today and help us build the future.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="/about"
+           class="rounded-md bg-black px-3.5 py-2.5 border border-black text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black">
+          Learn More About Us
+        </a>
+        <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900">
+          Contact Us <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
