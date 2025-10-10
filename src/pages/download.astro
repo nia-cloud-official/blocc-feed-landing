@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Download BloccFeed">
+
+  <section class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
+    <div class="mx-auto max-w-3xl px-6 pt-24 pb-8 lg:px-8 lg:pt-32 lg:pb-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          Download <span class="text-indigo-600">BloccFeed</span>
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Mobile APK is available now. Desktop builds are coming soon.
+        </p>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center gap-y-6">
+        <!-- Download Button -->
+        <a href="./downloads/latest/bloccfeed-1.0.0.apk">
+        <button class="button" type="button">
+          <span class="button__text">Download</span>
+          <span class="button__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class="svg">
+              <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+              <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+              <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+            </svg>
+          </span>
+        </button>
+        </a>
+      </div>
+
+      <div class="mt-12 border-t border-gray-300 pt-8 text-center">
+        <h2 class="text-xl font-semibold text-gray-900">Release Information</h2>
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li><strong>Version:</strong> 1.0.0</li>
+          <li><strong>Last Updated:</strong> October 2025</li>
+          <li><strong>File Size:</strong> 25 MB</li>
+          <li><strong>Platform:</strong> Android (APK)</li>
+        </ul>
+        <p class="mt-6 text-sm text-gray-500">
+          By downloading BloccFeed you agree to our Terms of Service and Privacy Policy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.button {
+  --font-color: #fff;
+  --bg-color: linear-gradient(135deg, #7c3aed, #6366f1); /* purple-indigo gradient */
+  --bg-color-sub: rgba(255,255,255,0.15);
+  --main-color: #4c1d95; /* deep purple border/shadow */
+  position: relative;
+  width: 160px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.button, .button__icon, .button__text { transition: all 0.3s; }
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+.button .button__icon {
+  position: absolute;
+  transform: translateX(120px);
+  height: 100%;
+  width: 40px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button .svg { width: 20px; fill: #fff; }
+.button:hover {
+  filter: brightness(1.1);
+}
+.button:hover .button__text { color: transparent; }
+.button:hover .button__icon {
+  width: 158px;
+  transform: translateX(0);
+}
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+</style>
