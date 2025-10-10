@@ -52,8 +52,13 @@ const {title} = Astro.props;
         <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900">Contact</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="/download" class="text-sm font-semibold leading-6 text-gray-900">Download <span aria-hidden="true">&rarr;</span></a>
-      </div>
+        <!-- Download Button -->
+        <a href="/download">
+        <button class="button" type="button">
+          <span class="button__text">Download</span>
+        </button>
+        </a>
+</div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div id="navBar" class="hidden lg:hidden" role="dialog" aria-modal="true">
@@ -89,10 +94,12 @@ const {title} = Astro.props;
                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
             </div>
             <div class="py-6">
-              <a href="/download"
-                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                Download <span aria-hidden="true">&rarr;</span>
-              </a>
+              <!-- Download Button -->
+        <a href="/download">
+        <button class="button" type="button">
+          <span class="button__text">Download</span>
+        </button>
+        </a>
             </div>
           </div>
         </div>
@@ -112,6 +119,55 @@ const {title} = Astro.props;
 
 </body>
 </html>
+<style>
+.button {
+  --font-color: #fff;
+  --bg-color: linear-gradient(135deg, #7c3aed, #6366f1); /* purple-indigo gradient */
+  --bg-color-sub: rgba(255,255,255,0.15);
+  --main-color: #4c1d95; /* deep purple border/shadow */
+  position: relative;
+  width: 130px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.button, .button__icon, .button__text { transition: all 0.3s; }
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+.button .button__icon {
+  position: absolute;
+  transform: translateX(120px);
+  height: 100%;
+  width: 40px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button .svg { width: 20px; fill: #fff; }
+.button:hover {
+  filter: brightness(1.1);
+}
+.button:hover .button__text { color: transparent; }
+.button:hover .button__icon {
+  width: 158px;
+  transform: translateX(0);
+}
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+</style>
+
 
 
 <script>
